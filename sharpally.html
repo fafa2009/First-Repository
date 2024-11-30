@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 90vh;
+        width: 100%;
+    }
+ .container{position: relative;
+    padding:5px 15px;
+    background-color: burlywood;
+    border-radius: 10px;
+    box-shadow: 3px 4px 4px hsla(0, 0%, 0%, 0.251) ;
+   transition: all 1s ease 0s;
+   animation: float 3s ease-in-out infinite;
+ }
+ 
+ @keyframes float {
+  0% {
+    transform: translateX(0) rotate(0);
+   
+  }
+  50% {
+    transform: translateX(-20px) rotate(120deg);
+  }
+  100% {transform:translateX(0) rotate(-180deg) ;
+
+  }
+}
+ ul{
+    display: flex;
+    justify-content:center
+ }
+ li{list-style: none;
+    padding: 0 7px;
+ }
+ a{ position: relative;
+    text-decoration: none;
+    color: white;
+    font-size: 19px;
+    padding: 4px;
+    }
+ a::before{
+    position: absolute;
+    left: 0;
+    height: 2px;
+    content:'';
+    top: 25px;
+    bottom: 0;
+    right: 0;
+    
+    color: transparent;
+    width: 0%;
+    
+    transition: all .5s ease;
+   
+ }
+ a:hover::before{
+    
+    width: 100%;
+    background-color: wheat;
+    opacity: 0.5;
+    
+ }
+ a:not(:hover)::before{
+
+    background-color: wheat;
+    opacity: 0.5;
+    
+ }
+ 
+a:hover{
+   color: gray;
+   
+
+ }
+ .rr{
+    position:relative
+ }
+ .content{
+    display: none;
+    background-color: hsla(34, 57%, 70%, 0.689);
+    position: absolute;
+    width: 130px;
+ }
+ .content ul{
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+ }
+ .content ul li{
+
+    padding:4px 0;
+    color: white;
+ }
+ .dropdown:hover .content{
+    display: block;
+
+ }
+</style>
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <div class="dropdown">
+                 <li class="rr"><a href="">About us</a></li>
+                 <div class="content">
+                    <ul>
+                        <li>Mememe</li>
+                        <li>Mememe</li>
+                        <li>Mememe</li>
+                        <li>Mememe</li>
+                    </ul>
+                 </div>
+                </div>
+                <li><a href="">Contact us</a></li>
+                <li><a href="">More info</a></li>
+                <li><a href="">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&family=Signika:wght,GRAD@300..700,-6&display=swap" rel="stylesheet">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Signika", sans-serif;
+    font-style: normal;
+    font-size: 15px;
+}
+body{
+    background-color:#141225;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    height:100vh ;
+}
+.container{
+    width:25%;
+    min-width: 200px;
+    position: relative;
+    flex-shrink: 1;
+    height: 371.600px;
+    display:flex;
+    justify-content: space-between;
+}
+.line,.line2{
+    width: 1px;
+    height: 110%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+}
+.line{
+    align-self: end;
+    align-items: flex-start;
+}
+.line2{
+    align-items:end;
+}
+.circle{
+    width: max(70px,10vw);
+    height: max(70px,10vw);
+    border-radius: 50%;
+    position: absolute;
+    
+}
+.line .circle{
+    background:blue;
+    animation: slide 12s linear  infinite forwards;
+}
+.line2 .circle{
+    background:red;
+    animation: slide2 12s linear  infinite forwards ;
+}
+@keyframes slide{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(340px);
+    }
+    100%{
+        transform: translateY(-10px);
+    }
+}
+@keyframes slide2{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-340px);
+    }
+    100%{
+        transform: translateY(10px);
+    }
+}
+form{width:100%;
+    border: rgb(255,255,255,0.1);
+    box-shadow:0 0 40px rgb(8,7,16,0.6);
+    background-color:rgb(255,255,255,0.13);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+form .inputgroup{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+form input{
+    width: 100%;
+}
+h3{
+    font-size: 30px;
+    color: white;
+}
+.inputgroup label{
+    color: white;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.inputgroup input{
+    height: 35px;
+    border: none;
+    outline: none;
+    padding: 0 0 0 10px;
+    background-color: rgb(255,255,255,0.13);
+    color: white;
+}
+::placeholder{
+    color: #e5e5e5;
+}
+button{margin-top: 10px;
+    width: 100%;
+    color: black;
+    height: 40px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background-color: white;
+
+}
+button::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: -100%;
+    background-color: #202020;
+    z-index: -1;
+    transition:left .6s linear,color 0.6s linear;
+    color: white;
+}
+button:hover{
+    color: white;
+
+}
+button:hover::before{
+    left: 0%;
+}
+div.icons{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+
+}
+div.icons div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255,255,255,0.13);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+div.icons div:hover{
+    background-color: rgb(255,255,255,0.1);
+}
+.bubble{    width: 100%;
+            position: absolute;
+            display: flex;
+            align-self: end;
+            left: 0;
+            top: 140vh;
+        }
+        .bubble span{
+            flex-shrink: 0;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            margin: 0 5px;
+            background-color: #4fc3dc;
+            box-shadow: 0 0 10px  #4fc3dc44,
+                        0 0 50px  #4fc3dc
+                        ,0 0 100px  #4fc3dc;
+                        animation:bubble linear infinite both;
+                        animation-duration: calc(170s / var(--i));
+        }
+        @keyframes bubble{
+            0%{
+                transform:translateY(0) scale(0);
+            }
+            100%{
+                transform:translateY(-170vh) scale(1);
+            }
+        }
+        .bubble span:nth-child(even){
+            background-color:#ff2d75;
+            box-shadow: 0 0 10px #ff2d7544,
+                        0 0 50px #ff2d75
+                        ,0 0 100px #ff2d75;
+        }
+    </style>
+</head>
+<body>
+    <div class="bubble">
+        <span style="--i:11"></span>
+        <span style="--i:6"></span>
+        <span style="--i:33"></span>
+        <span style="--i:24"></span>
+        <span style="--i:15"></span>
+        <span style="--i:20"></span>
+        <span style="--i:17"></span>
+        <span style="--i:24"></span>
+        <span style="--i:30"></span>
+        <span style="--i:19"></span>
+        <span style="--i:28"></span>
+        <span style="--i:14"></span>
+        <span style="--i:17"></span>
+        <span style="--i:28"></span>
+        <span style="--i:24"></span>
+        <span style="--i:26"></span>
+        <span style="--i:18"></span>
+        <span style="--i:13"></span>
+        <span style="--i:16"></span>
+        <span style="--i:12"></span>
+        <span style="--i:24"></span>
+        <span style="--i:16"></span>
+        <span style="--i:25"></span>
+        <span style="--i:7"></span>
+        <span style="--i:10"></span>
+        <span style="--i:24"></span>
+        <span style="--i:18"></span>
+        <span style="--i:8"></span>
+        <span style="--i:28"></span>
+        <span style="--i:18"></span>
+        <span style="--i:21"></span>
+        <span style="--i:11"></span>
+        <span style="--i:6"></span>
+        <span style="--i:33"></span>
+        <span style="--i:24"></span>
+        <span style="--i:15"></span>
+        <span style="--i:20"></span>
+        <span style="--i:17"></span>
+        <span style="--i:24"></span>
+        <span style="--i:30"></span>
+        <span style="--i:19"></span>
+        <span style="--i:28"></span>
+        <span style="--i:14"></span>
+        <span style="--i:17"></span>
+        <span style="--i:28"></span>
+        <span style="--i:24"></span>
+        <span style="--i:26"></span>
+        <span style="--i:18"></span>
+        <span style="--i:13"></span>
+        <span style="--i:16"></span>
+        <span style="--i:12"></span>
+        <span style="--i:24"></span>
+        <span style="--i:16"></span>
+        <span style="--i:25"></span>
+        <span style="--i:7"></span>
+        <span style="--i:10"></span>
+        <span style="--i:24"></span>
+        <span style="--i:18"></span>
+        <span style="--i:8"></span>
+        <span style="--i:28"></span>
+        <span style="--i:18"></span>
+        <span style="--i:21"></span>
+    </div>
+    <div class="container">
+     <div class="line">
+        <div class="circle"></div>
+     </div>
+     <form action="" onsubmit="return false">
+        <h3>Login Here</h3>
+        <div class="inputgroup">
+            <label for="email">Email</label>
+            <input type="email" name="Email" placeholder="Enter Email here" id="email">
+        </div>    
+        <div class="inputgroup">
+            <label for="password">Password</label>
+            <input type="password" name="Password" placeholder="Enter Password here" maxlength="30"
+            minlength="3" id="password">
+        </div>
+        <button type="submit">Login</button>
+        <div class="icons">
+            <a href="http://" target="blank" rel="noopener noreferrer">
+            <div>
+               <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAARFJREFUSEvtljFKQ0EURc8l2FnahCxABBt3YMAN2KbRJrqI9O4gokFIOndgJ4lLsFDIBoLaBLSUcM23GgLh/wnJH4N/2ve4Z96dx2VEoqNEXLYTbLsGHAG7wBfwAbxJ+s5zcuWJbZ8CXaC+AHmRdLgRsO1zoL9EfDNg2zvABNgrG3wMDBegY+AB+MzeWdL12q22fQYMAuF3oCFplgcL69HLZftivlC3gciTpMyFqLMK+BK4CSgjSc0oKsQHiO3ywLZfgYOCU91LauX1FrI6Enw1T65OCnBb0l0K8Imkx7WAQxHbbaCXYqsrcGkBUlldWZ2XHb/1Qln9VwIk+1XuB5eZSnouNGbQFD1xLGBZ//8D/wAChn4fd1oRQAAAAABJRU5ErkJggg=="/>
+                    
+            </div>
+        </a>
+        <a href="http://" target="blank" rel="noopener noreferrer">
+            <div>
+               <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAARFJREFUSEvtljFKQ0EURc8l2FnahCxABBt3YMAN2KbRJrqI9O4gokFIOndgJ4lLsFDIBoLaBLSUcM23GgLh/wnJH4N/2ve4Z96dx2VEoqNEXLYTbLsGHAG7wBfwAbxJ+s5zcuWJbZ8CXaC+AHmRdLgRsO1zoL9EfDNg2zvABNgrG3wMDBegY+AB+MzeWdL12q22fQYMAuF3oCFplgcL69HLZftivlC3gciTpMyFqLMK+BK4CSgjSc0oKsQHiO3ywLZfgYOCU91LauX1FrI6Enw1T65OCnBb0l0K8Imkx7WAQxHbbaCXYqsrcGkBUlldWZ2XHb/1Qln9VwIk+1XuB5eZSnouNGbQFD1xLGBZ//8D/wAChn4fd1oRQAAAAABJRU5ErkJggg=="/>
+                    
+            </div>
+        </a>
+        <a href="http://" target="blank" rel="noopener noreferrer">
+            <div>
+               <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAARFJREFUSEvtljFKQ0EURc8l2FnahCxABBt3YMAN2KbRJrqI9O4gokFIOndgJ4lLsFDIBoLaBLSUcM23GgLh/wnJH4N/2ve4Z96dx2VEoqNEXLYTbLsGHAG7wBfwAbxJ+s5zcuWJbZ8CXaC+AHmRdLgRsO1zoL9EfDNg2zvABNgrG3wMDBegY+AB+MzeWdL12q22fQYMAuF3oCFplgcL69HLZftivlC3gciTpMyFqLMK+BK4CSgjSc0oKsQHiO3ywLZfgYOCU91LauX1FrI6Enw1T65OCnBb0l0K8Imkx7WAQxHbbaCXYqsrcGkBUlldWZ2XHb/1Qln9VwIk+1XuB5eZSnouNGbQFD1xLGBZ//8D/wAChn4fd1oRQAAAAABJRU5ErkJggg=="/>
+                    
+            </div>
+        </a>
+        </div>
+     </form>
+     <div class="line2">
+        <div class="circle"></div>
+     </div>
+    </div>  
+</body>
+</html>

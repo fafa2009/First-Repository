@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  body{display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    box-sizing: border-box;
+  }
+  .container{display: grid;
+    width: 100%;
+    grid-template-columns:300px 300px;
+    grid-template-rows: 300px 300px;
+    grid-template-areas:"f2 f1" 
+                        "f2 f1";
+  }
+  .flex1{grid-area: f1;
+     
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    background-color:#094D92;
+  }
+  .flex2{
+    grid-area: f2;
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 4px;
+    background-color:#C3F73A;
+  }
+
+</style>
+<body>
+    <div class="container">
+    <div class="flex1">
+        <p>flex1</p>
+    </div>
+    <div class="flex2">
+      <p>flex2</p>
+    </div>
+</div>
+</body>
+</html>
