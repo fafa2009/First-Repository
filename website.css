@@ -1,0 +1,439 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: "Signika", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+body{
+    width: 100%;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #06173e;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+
+}
+header a img{
+    flex-shrink: 0;
+    
+    
+}
+header nav{
+    flex-shrink: 1;
+    flex-grow: .3;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
+header ul{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    white-space: nowrap;
+    justify-content: space-evenly;
+}
+header ul li{
+    list-style: none;
+    margin:0 10px
+   
+}
+header nav  a{
+    text-decoration: none;
+    color: white;
+    transition: all linear .4s;
+    -webkit-transition: all linear .4s;
+    -moz-transition: all linear .4s;
+    position: relative;
+    font-size: 18px;
+}
+header nav a:hover{
+    color: blue;
+}
+header nav a::before{
+    position: absolute;
+    left: 0;
+    height: 2px;
+    content:'';
+    top: 25px;
+    color: transparent;
+    width: 0%;
+    transition: all .5s ease;
+}
+header nav a:hover::before{
+    width: 100%;
+    background-color: wheat;
+    opacity: 0.5;
+}
+
+#hero{
+    background: url("../Code Resources/media/istockphoto-484702826-612x612.jpg");
+    background-repeat:no-repeat ;
+    background-size: cover;
+    background-position: center;
+    height: 75vh;
+    padding: 40px 30px;
+    position: relative;
+
+    
+}
+#hero::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color:rgb(1,9,64,0.6);
+    width: 100%;
+    height: 100%;
+
+}
+section .text{
+    color: white;
+    z-index: 1;
+    position: relative;
+}
+section .text >p{
+    margin-bottom:30px;
+    font-size: 30px;
+    text-decoration: underline;
+    text-decoration-style: double;
+    text-decoration-color: #bceb4e;
+}
+section h2{
+    font-size:28px;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+section .text .occupie{
+    display: flex;
+    align-items: center;  
+    margin: 20px 0;
+    font-size: 15px;
+}
+section .occupie img{
+    height:15px;
+    width: 15px;
+    z-index: 2;
+}
+
+section .text a{
+    text-decoration: none;
+    
+}
+section .text button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    background-color: #2de036;
+    margin-top:40px;
+    border: none;
+    border-radius:calc(56px/2);
+    height: 56px;
+    width: 170px;
+    transition: all ease .6s;
+    box-shadow: 0 0 15px rgb(94, 91, 91);
+    
+}
+section .text button:hover{
+    color:#4ed8c1 ;
+    background-color:  #06173e;
+   
+}
+#what_we{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5em 3em;
+    
+}
+#what_we .what_we{
+   flex-shrink: 1;
+   text-align: center;
+   width: 100%;
+   
+}
+.what_we .what{
+    font-size: 20px;
+    font-weight: 400;
+    text-decoration: underline double;
+}
+.what_we h1{
+    font-size: 40px;
+    margin:0.5em;
+    font-weight: 700;
+}
+.what_we p{
+    line-height: 26px;
+    letter-spacing: 1.3px;
+}
+.images{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:10px;
+    margin-top: 2em ;
+}
+.images img{
+    height: 180px;
+    width: 200px;
+    max-width: 400px;
+    border-radius: 4px;
+    flex-grow:1;
+}
+#plans{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 3em;
+}
+#plans .our-plans{
+    font-size: 20px;
+    font-weight: 400;
+    text-decoration: underline;
+    margin-bottom:1.5em ;
+}
+.plan_card_area img{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+}
+#plans .plan_card_area{
+    display:flex;
+    gap: 70px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#plans .card{
+    width: 320px;
+    background-color: #0b1247;
+    border-radius: 20px;
+    padding:10px 20px;
+    color: white;
+    box-shadow: 0 4px 8px rgb(0,0,0,0.2);
+}
+#plans .card .flex-img-p{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+#plans .card .flex-img-p p{
+    margin-left: 20px;
+}
+
+#plans hr{
+    margin: -10px 0 20px 0;
+    width: 87%;
+}
+#plans .card .lorem{
+    margin-left: 70px;
+}
+.lorem p{
+    line-height:28px
+}
+#plans .card ul li{
+    font-size: 13px;
+    line-height: 20px;
+    color: #7ea7fe;
+}
+.stars{
+    margin-top: 30px;
+}
+#news{
+    margin: 5em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+#news .newspara{
+    margin-bottom:30px;
+    font-size: 30px;
+    text-decoration: underline;
+    text-decoration-style: double;
+    text-decoration-color: #bceb4e;
+}
+#news h1{
+    margin:20px 0;
+    font-size: 300;
+}
+.newscard_area{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap:10px;
+    margin-top: 30px;
+}
+.newscard{
+    width: 270px;
+   box-shadow: 0 4px 10px rgb(0,0,0,0.2);
+   font-size: 14px;
+   border:1px solid rgb(228,227,227)
+}
+.newscard img{
+    width: 100%;
+}
+.newscard .newstitle{
+    margin:20px 0;
+}
+.newscard .thenews{
+    margin: 40px 0;
+    padding: 0 25px;
+    text-align: justify;
+}
+.newscard .conclusion{
+    margin: 15px 0;
+}
+.conclusion,.newstitle{
+    padding-left: 30px;
+}
+footer{
+    background: url(https://media.istockphoto.com/id/1384520970/photo/business-invoice-tax-management.jpg?s=612x612&w=0&k=20&c=5G2uwipyWgdsP1jqOc8eyiDmopQ7_TFmbnon_6lf8lU=);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px ;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    padding:5vh 20px;
+}
+footer::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color:rgb(1,9,64,0.6);
+    width: 100%;
+    height: 100%;
+
+}
+footer .words{
+    width:50%;
+    z-index: 1;
+    color: white;
+    margin: 20px 0;
+    min-width: 300px;
+}
+
+.words h1{
+    margin: 20px 0;
+    font-weight: 700;
+}
+footer .word a{
+    color: #7ea7fe;
+}
+footer form{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    color: #7ea7fe;
+}
+footer form input{
+    height: 30px;
+    padding-left: 20px;
+}
+footer form input,textarea{
+    border: none;
+    outline: none;
+    resize: none;
+}
+footer form .form{
+    margin: 10px 0;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+}
+form button{
+    width: 120px;
+    height: 40px;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    background-color: #4ed8c1;
+    cursor: pointer;
+    transition: all ease .6s;
+    -webkit-transition: all ease .6s;
+    -moz-transition: all ease .6s;
+}
+form button:hover{
+        color:#4ed8c1 ;
+        background-color:  #06173e;
+}
+form .icons{
+    margin: 10px 0;
+}
+@media (max-width:768px){
+body{
+    width: 100%;
+}
+section .occupie{
+    font-size: clamp(17px,8vw,20px)!important;
+}
+section .text button{
+    font-size: clamp(1.2em,3.3vw,1.5em) !important;
+    letter-spacing: 0.6px;
+}
+.what_we .what{
+    font-size: clamp(20px,7vw,24px);
+    font-weight: 400;
+    text-decoration: underline double;
+}
+.what_we h1{
+    font-size: 42px;
+    margin:0.5em 0;
+    font-weight: 700;
+}
+.what_we p{
+    line-height: 26px;
+    letter-spacing: 1.3px;
+    font-size: 18px;
+    font-weight: 300;
+}
+.thenews p{
+    font-size: 21px;
+}
+#what_we{
+    margin:5em 1em;
+}
+#plans{
+    margin: 5em 1em;
+}
+#plans .card{
+    width: 100%;
+    flex-grow: 1;
+}
+#plans .card .flex-img-p p{
+    margin-left: 20px;
+    font-size: 22px;
+}
+#plans .our-plans{
+    font-size: 24px;
+    font-weight: 300;
+}
+#plans .card ul li
+{
+        font-size:clamp(15px,4vw,17px);
+        line-height: 20px;
+        margin: 5px 0;
+        color: #7ea7fe;
+        font-weight: 300;
+    }
+ 
+ footer form{
+    flex-grow: 1;
+    margin: 0 20px;
+ }   
+ footer .words{
+    flex-grow: 1;
+    min-width:auto;
+ }
+}

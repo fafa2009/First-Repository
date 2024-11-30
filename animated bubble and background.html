@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{  
+            margin: 0;
+            padding: 0;
+        }
+        h1 ,h2{
+            user-select: none;
+        }
+        body{ overflow: hidden;
+            height: 100vh;
+            width: 100%;
+            background: linear-gradient(45deg,red,blue,orange);
+            background-size: 400% 100%;
+            animation:color 12s ease-in-out infinite both;
+            width: 100%;
+            min-height:100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .bubble{
+            position: relative;
+            display: flex;
+        }
+        .bubble span{
+            width: 25px;
+            height: 25px;
+            position: relative;
+            top:0;
+            border-radius: 50%;
+            margin: 0 5px;
+            background-color: #4fc3dc;
+            box-shadow: 0 0 10px  #4fc3dc44,
+                        0 0 50px  #4fc3dc
+                        ,0 0 100px  #4fc3dc;
+                        animation:bubble 150s linear infinite both;
+                        animation-duration: calc(130s / var(--i));
+        }
+        @keyframes bubble{
+            0%{top: 500px;
+                transform:translateY(0) scale(0);
+            }
+            100%{
+                transform:translateY(-100vh) scale(1);
+            }
+        }
+        .bubble span:nth-child(even){
+            background-color:#ff2d75;
+            box-shadow: 0 0 10px #ff2d7544,
+                        0 0 50px #ff2d75
+                        ,0 0 100px #ff2d75;
+        }
+        @keyframes color{
+            0%{
+                background-position:0% 50%;
+            }
+            50%{
+                background-position: 100% 50%;
+            }
+            100%{
+                background-position: 0% 50%;
+            }
+
+        }
+        .container2{
+            width:98%;
+            margin:auto;
+            position: relative;
+            z-index: 1;
+            display:flex;
+            flex-wrap: wrap;
+            column-gap: 2vw;
+            justify-content:space-between;
+            align-items: center;
+        }
+        .words{width: 50%;
+            min-width: auto;
+            color: white;
+            font-size:clamp(3em,1vw,6em);
+            font-family:serif;
+            border-left:2px solid #4fc3dc44;
+            padding: 0 0 0 20px;
+        
+        }
+        h1{
+            margin: auto;
+        }
+        .form{
+            width:40%;
+        }
+        form{margin:auto;
+            width:300px ;
+            display:flex;
+            flex-direction:column;
+            align-items: center;
+            background-color:#4fc3dc44;
+            border: 2px solid #4fc3dc44;
+            border-radius:10px;
+            padding: 20px 0;
+            height:80vh;
+        }
+        form h2{
+            color: #ffffff;
+            font-size: clamp(23px,12vw,34px);
+        }
+        .int{display: flex;
+            align-items: center;
+            margin:20px 0 ;
+            width: 250px;
+        }
+        input{position: relative;
+      border:2px solid white ;
+      outline: none;
+      border-radius: 6px;
+    height:40px ;
+    width: 100%;
+    color: black;
+    background-color:#4fc3dc;
+    transition: all .2s linear;
+    -webkit-transition:all .2s linear;
+    -moz-transition:all .2s linear;
+    font-size: 18px;
+}
+
+      
+input:focus{
+    background-color:white;
+    border:2px solid #ff2d75;;
+    transform: scaleY(1.4);
+}        
+input:not(:focus){
+    color:#4fc3dc ;
+}
+.int label
+    {color: #ffffff;
+    font-size: clamp(18px,8vw,23px);
+     position: absolute;
+    transform: translateX(10px);
+     pointer-events: none;
+
+     transition:all .3s linear; 
+      }
+.int input:focus~label
+   {color: #ff2d75;
+    transform: translate(0px,-90%);
+    font-size:0.3 ;
+    scale:0.8; 
+
+    
+   }
+   .Sign_up{
+    width: 250px;
+    font-size:clamp(18px,8vw,23px);
+    color: white;
+    background-color: #ff2d75;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+   }
+
+    </style>
+</head>
+<body> 
+        <div class="container2"> 
+        <div class="words"> 
+          <h1>Join Today<h1>
+          <p>For more art tips</p>  
+        </div>    
+     <div class="form">
+     <form action="post">
+      <h2>Sign Up</h2>
+      <div class="int">
+      <input type="username">
+      <label for="username">Username</label>
+      </div>
+      <div class="int">
+      <input type="password" id="password">
+      <label for="password">Password</label>
+      </div>
+      <div class="int">
+      <input type="Password">
+      <label for="Confirm">confirm Password</label>
+      </div>
+      <input type="submit" value="Sign up" class="Sign_up" title="Sign-up" style="color: #ffffff;">
+     </form>
+    </div>
+    </div>
+    <div class="bubble">
+        <span style="--i:11"></span>
+        <span style="--i:6"></span>
+        <span style="--i:33"></span>
+        <span style="--i:24"></span>
+        <span style="--i:15"></span>
+        <span style="--i:20"></span>
+        <span style="--i:17"></span>
+        <span style="--i:24"></span>
+        <span style="--i:30"></span>
+        <span style="--i:19"></span>
+        <span style="--i:28"></span>
+        <span style="--i:14"></span>
+        <span style="--i:17"></span>
+        <span style="--i:28"></span>
+        <span style="--i:24"></span>
+        <span style="--i:26"></span>
+        <span style="--i:18"></span>
+        <span style="--i:13"></span>
+        <span style="--i:16"></span>
+        <span style="--i:12"></span>
+        <span style="--i:24"></span>
+        <span style="--i:16"></span>
+        <span style="--i:25"></span>
+        <span style="--i:7"></span>
+        <span style="--i:10"></span>
+        <span style="--i:24"></span>
+        <span style="--i:18"></span>
+        <span style="--i:8"></span>
+        <span style="--i:28"></span>
+        <span style="--i:18"></span>
+        <span style="--i:21"></span>
+    </div>
+</body>
+</html>

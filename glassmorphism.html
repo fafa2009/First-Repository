@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassform</title>
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 90vh;
+    background-color:#141225;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    width: 250px;
+    border: rgb(255,255,255,0.1);
+    box-shadow:0 0 40px rgb(8,7,16,0.6);
+    background-color:rgb(255,255,255,0.13);
+    backdrop-filter: blur(5px);
+    position: relative;
+}
+.circle{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.container div:first-child{
+    background:linear-gradient(58deg,red,purple);
+    position: absolute;
+    top: -20%;
+    left: 0;
+
+}
+.container div:first{
+    background:linear-gradient(58deg,rgb(1, 1, 2),purple);
+    top: 100%;
+    left:10%;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+     <div class="circle"></div>
+     <div class="circle"></div>
+    </div>
+     <form action="" onsubmit="return false">
+        <div class="inputgroup">
+            <label for="email">Email</label>
+            <input type="email" name="Email" id="email">
+        </div>    
+        <div class="inputgroup">
+            <label for="password">Password</label>
+            <input type="password" name="Password" id="password">
+        </div>
+        <button type="submit">Login</button>
+        <div class="icons">
+            <a href="http://" target="blank" rel="noopener noreferrer">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAARFJREFUSEvtljFKQ0EURc8l2FnahCxABBt3YMAN2KbRJrqI9O4gokFIOndgJ4lLsFDIBoLaBLSUcM23GgLh/wnJH4N/2ve4Z96dx2VEoqNEXLYTbLsGHAG7wBfwAbxJ+s5zcuWJbZ8CXaC+AHmRdLgRsO1zoL9EfDNg2zvABNgrG3wMDBegY+AB+MzeWdL12q22fQYMAuF3oCFplgcL69HLZftivlC3gciTpMyFqLMK+BK4CSgjSc0oKsQHiO3ywLZfgYOCU91LauX1FrI6Enw1T65OCnBb0l0K8Imkx7WAQxHbbaCXYqsrcGkBUlldWZ2XHb/1Qln9VwIk+1XuB5eZSnouNGbQFD1xLGBZ//8D/wAChn4fd1oRQAAAAABJRU5ErkJggg=="/>
+            </a>
+            <a href="http://www.instagram.com" target="blank" rel="noopener noreferrer">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAA2NJREFUSEvNlkuIl2UUxn9PN0ELDBQvpYWUkmBjXjZFKtUuYyQEW3hJRRftUjEYTCqRBI3aBC3U0ZEWLayYJjcKog0UXlLEUMIWUhqBUKi5q+P7DO/I5+f3/b/5u5l54c9/8b3vec55znMuYpiOhgmXkQ0cEZOAZ4AHGxj6D7gk6c8mJmsjjoiJwE7gdeDxJkOl738D3wOb65yoBI4Ig32VgMdkg/8CZwBH1Oo8AswBRuVLN4Flkg6VH90DHBGjgd8AR9yd/r8ATktqAh2wHREPAS8DH+b/q8Czkm4VwauA/WCrI5b0VpsUG3hFApWknog4CiyyE5I+aAL+A3jCEUv6qx3gDNqT36zO6TkLXJH0ZC1wFpQVeVHSc1WgEWGnOoEXzSzwI/CNRRQRK4H9+d0aSd0RcQN4FBgv6dqgzbuojggL4zTQL8l5uutExPpkZBfwWOnTdeBdSXsj4m1TDZyXdDKxYL1MA2ZJOl8HbLDjLgVJi4vGk+cbM6hBPgN+Bh4Gnjdojsrg/nbnRMQ5g5ohSWZn4JQjfg04nKl7c/BSRLyQ6vkkYKrmSrpSMj41O2Im5kj6pfDWOe6wwiX1NwEfTLQsLTz+KNXw+8AGSZ/W5P49YAewRdL2wlszY8cXSPqhDvhV4EhFxN8Bpn6xJHeke06i1Awd9K/ktDVj7SySdKwO2DXn2uuT9EbB62+zkjsl9bYJ7BTNS9p5RZJtV+Z4ELhXkktm4ESEG4obyyZJn9QAdyWxmeIuSR8X3p6yLlJACyVZuC2ByxFPcW2npu+2N7tCXE/lZuF2OaM4GCJiSOJ6yTVcU07vpCbweYrajd8l40g8FKxYl5N7/LrUoXaXFG+Fz0w256cS9ZvKiK0+q7CugaxLzcNUVzUQK35POQ2FBtIhyTVdCex++jtwWdLTNbl0y1yS6t3seGL9lJrI11VzNyIeyOnxmJwiyXOgEtgbxj+5C00eyiZR5VxBWFazVe30jC2O1qqx6BytTTP0S0nLWxlu+lYYi92S1hTvVwGPA37N6443h23ACUn/NwHl0htcBPzO6fAaNL04mXyvbvVZBewrAN3v6mMTKyUdKDvdatlb4N6cxqQ7mEXSzjE7fa6AYtNoSXVFOUxIa1DlUtDCkwtN28vIXujb4Xiod4ct4tvRr10uBVZ4+AAAAABJRU5ErkJggg=="/>
+            </a>        
+            <a href="http://www.instagram.com" target="blank" rel="noopener noreferrer">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAA2NJREFUSEvNlkuIl2UUxn9PN0ELDBQvpYWUkmBjXjZFKtUuYyQEW3hJRRftUjEYTCqRBI3aBC3U0ZEWLayYJjcKog0UXlLEUMIWUhqBUKi5q+P7DO/I5+f3/b/5u5l54c9/8b3vec55znMuYpiOhgmXkQ0cEZOAZ4AHGxj6D7gk6c8mJmsjjoiJwE7gdeDxJkOl738D3wOb65yoBI4Ig32VgMdkg/8CZwBH1Oo8AswBRuVLN4Flkg6VH90DHBGjgd8AR9yd/r8ATktqAh2wHREPAS8DH+b/q8Czkm4VwauA/WCrI5b0VpsUG3hFApWknog4CiyyE5I+aAL+A3jCEUv6qx3gDNqT36zO6TkLXJH0ZC1wFpQVeVHSc1WgEWGnOoEXzSzwI/CNRRQRK4H9+d0aSd0RcQN4FBgv6dqgzbuojggL4zTQL8l5uutExPpkZBfwWOnTdeBdSXsj4m1TDZyXdDKxYL1MA2ZJOl8HbLDjLgVJi4vGk+cbM6hBPgN+Bh4Gnjdojsrg/nbnRMQ5g5ohSWZn4JQjfg04nKl7c/BSRLyQ6vkkYKrmSrpSMj41O2Im5kj6pfDWOe6wwiX1NwEfTLQsLTz+KNXw+8AGSZ/W5P49YAewRdL2wlszY8cXSPqhDvhV4EhFxN8Bpn6xJHeke06i1Awd9K/ktDVj7SySdKwO2DXn2uuT9EbB62+zkjsl9bYJ7BTNS9p5RZJtV+Z4ELhXkktm4ESEG4obyyZJn9QAdyWxmeIuSR8X3p6yLlJACyVZuC2ByxFPcW2npu+2N7tCXE/lZuF2OaM4GCJiSOJ6yTVcU07vpCbweYrajd8l40g8FKxYl5N7/LrUoXaXFG+Fz0w256cS9ZvKiK0+q7CugaxLzcNUVzUQK35POQ2FBtIhyTVdCex++jtwWdLTNbl0y1yS6t3seGL9lJrI11VzNyIeyOnxmJwiyXOgEtgbxj+5C00eyiZR5VxBWFazVe30jC2O1qqx6BytTTP0S0nLWxlu+lYYi92S1hTvVwGPA37N6443h23ACUn/NwHl0htcBPzO6fAaNL04mXyvbvVZBewrAN3v6mMTKyUdKDvdatlb4N6cxqQ7mEXSzjE7fa6AYtNoSXVFOUxIa1DlUtDCkwtN28vIXujb4Xiod4ct4tvRr10uBVZ4+AAAAABJRU5ErkJggg=="/>
+            </a>        
+             </form>  
+    </div>
+</body>
+</html>
